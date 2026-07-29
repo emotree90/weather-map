@@ -16,6 +16,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { addFavorite, isFavorite, removeFavorite } from "@/lib/favorites";
 import type { FavoriteLocation, MapSelection, WeatherResponse } from "@/lib/types";
 import { getWeatherEmoji, getWeatherLabel } from "@/lib/weather-codes";
+import { TemperatureChart } from "@/components/temperature-chart";
 
 interface WeatherPanelProps {
   selection: MapSelection | null;
@@ -180,8 +181,15 @@ export function WeatherPanel({
             ))}
           </div>
         ) : weather ? (
-          <ScrollArea className="h-[min(420px,50vh)] pr-3">
+          <ScrollArea className="h-[min(520px,55vh)] pr-3">
             <div className="space-y-6">
+              <section>
+                <h3 className="mb-3 text-sm font-medium text-slate-300">
+                  24 小时气温趋势
+                </h3>
+                <TemperatureChart weather={weather} />
+              </section>
+
               <section>
                 <div className="mb-3 flex items-center justify-between">
                   <h3 className="text-sm font-medium text-slate-300">7 天预报</h3>

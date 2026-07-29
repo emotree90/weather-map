@@ -66,7 +66,7 @@ export function WeatherApp() {
                 马来西亚天气地图
               </h1>
               <p className="text-sm text-slate-400">
-                点击地图查看天气 · 英文搜索 · 本地收藏
+                点击地图查看天气 · 英文搜索 · 降雨雷达 · 本地收藏
               </p>
             </div>
           </div>
